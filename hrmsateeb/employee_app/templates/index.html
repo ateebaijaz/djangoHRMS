@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <style>
+        /* Add the following styles for customization */
+
+        .btn {
+            /* Common button styles */
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .btn-signup {
+            background-color: #007BFF; /* Change to your desired color */
+            color: white; /* Change to your desired text color */
+            /* Add other styles as needed */
+        }
+
+        .btn-signin {
+            background-color: #28A745; /* Change to your desired color */
+            color: white; /* Change to your desired text color */
+            /* Add other styles as needed */
+        }
+
+        .card {
+            background-color: #f8f9fa; /* Change to your desired background color */
+        }
+
+        .emoji {
+            font-size: 50px; /* Adjust the size as needed */
+        }
+    </style>
+    <title>Human Resource Management System</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card bg-light">
+
+            <div class="card-body mx-auto text-center" style="max-width: 900px;">
+                <span class="emoji">👥</span>
+            </div>
+
+            <div id="form" class="form-group input-group">
+                <form action="/register" method="GET" class="form-group col-xs-3">
+                    {% csrf_token %}
+                    <button class="btn btn-signup" type="submit">Sign up</button>
+                </form>
+                <form action="/login" method="GET" class="form-group col-xs-3">
+                    {% csrf_token %}
+                    <button class="btn btn-signin" type="submit">Sign in</button>
+                </form>
+            </div>
+
+            <div>
+                <img class="bottom_image" src="https://palmhr.net/assets/images/home.png" alt="HRMS Image" style="width: 500px;"> 
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
